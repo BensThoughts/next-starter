@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+} */
+:root {
+  --app-bg-opacity: 1;
+  --app-text-opacity: 1;
+  --app-border-opacity: 1;
+  --app-backdrop-filter: blur(4px);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgba(var(--color-bg-primary), var(--app-bg-opacity));
+  color: rgba(var(--color-text-primary), var(--app-text-opacity));
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  will-change: background-color;
+  --app-outline: 2px dashed rgb(var(--color-text-secondary));
+  --app-outline-offset: 2px;
+  /* font-family: "Merriweather", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji"; */
+  /* transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  will-change: background, color, transition; */
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*:focus-visible {
+  outline: var(--app-outline);
+  outline-offset: var(--app-outline-offset);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: rgba(var(--color-text-secondary), var(--app-bg-opacity));
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scroll-track);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-scroll-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scroll-thumb-hover);
+}
+
+body[data-theme="light"] {
+  /* --color-bg-primary: 254, 235, 200; */
+  --color-bg-primary: 255, 255, 255;
+  --color-bg-terminal: 253, 239, 213;
+
+  --color-app-primary: 253, 233, 198;
+  --color-app-secondary: 237, 137, 54;
+  --color-app-accent: 250, 240, 137;
+  --color-app-error: 176, 0, 32;
+
+  --color-text-primary: 39, 32, 26;
+  --color-text-secondary: 7, 105, 99;
+  --color-text-inline-code: var(--color-text-secondary);
+
+  /* --color-icon-border-primary: var(--color-app-secondary); */
+
+  --color-gradient-primary: 7, 105, 99;
+  --color-gradient-secondary: 7, 105, 99;
+
+  --color-image-overlay: var(--color-app-primary);
+
+  --statusBarAccentColor: 237, 137, 54;
+  --statusBarAccentColorText: 39, 32, 26;
+  --statusBarTextColorAccent: 39, 32, 26;
+  --statusBarBackgroundColor: 251, 211, 141;
+  --statusBarTextColor: 0, 0, 0;
+
+  --color-scroll-thumb: #ed8936;
+  --color-scroll-track: #fbd38d;
+  --color-scroll-thumb-hover: #faf089;
+
+  /* --color-gradient-primary: 83, 11, 87;
+  --color-gradient-secondary: 120, 12, 61; */
+
+  /* Neon Purple/Pink
+  --color-gradient-primary: 247, 114, 212;
+  --color-gradient-secondary: 173, 108, 246; */
+}
+
+body[data-theme="dark"] {
+  /* --color-bg-primary: 21, 35, 45; */
+  --color-bg-primary: 20, 27, 35;
+  --color-bg-terminal: 32, 39, 50;
+
+  --color-app-primary: 37, 49, 62;
+  --color-app-secondary: 49, 130, 206;
+  --color-app-accent: 99, 179, 237;
+  --color-app-error: 207, 102, 121;
+
+  --color-text-primary: 227, 227, 227;
+  --color-text-secondary: 255, 107, 0;
+  --color-text-inline-code: var(--color-app-secondary);
+
+  /* --color-icon-border-primary: var(--color-app-accent); */
+
+  --color-gradient-primary: 255, 107, 0;
+  --color-gradient-secondary: 253, 200, 48;
+
+  --color-image-overlay: var(--color-app-secondary);
+
+  --statusBarAccentColor: 128, 149, 255;
+  --statusBarAccentColorText: 6, 24, 44;
+  --statusBarTextColorAccent: 128, 149, 255;
+  --statusBarBackgroundColor: 10, 37, 64;
+  --statusBarTextColor: 85, 113, 141;
+
+  --color-scroll-thumb: #3182ce;
+  --color-scroll-track: #4a5568;
+  --color-scroll-thumb-hover: #63b3ed;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
