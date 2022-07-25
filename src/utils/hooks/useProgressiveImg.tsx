@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useReducer} from 'react';
+import React, { useContext, useEffect, useReducer } from 'react';
 
 type Action = {type: 'addImage', payload: string}
 type Dispatch = (action: Action) => void;
@@ -27,9 +27,9 @@ function imageReducer(state: State, action: Action): State {
   }
 }
 
-function ImageCacheProvider({children}: ImageCacheProviderProps) {
+function ImageCacheProvider({ children }: ImageCacheProviderProps) {
   const [state, dispatch] = useReducer(imageReducer, {});
-  const value = {state, dispatch};
+  const value = { state, dispatch };
   return (
     <ImageCacheContext.Provider value={value}>
       {children}
@@ -63,7 +63,7 @@ function useProgressiveImage(lowQualitySrc: string, highQualitySrc: string) {
       img.onload = () => {
         // setSrc(highQualitySrc);
         // dispatch(setImgLoaded({imgSrc: highQualitySrc}));
-        dispatch({type: 'addImage', payload: highQualitySrc});
+        dispatch({ type: 'addImage', payload: highQualitySrc });
       };
     }
   }, [lowQualitySrc, highQualitySrc, imgCached, dispatch]);
@@ -71,4 +71,4 @@ function useProgressiveImage(lowQualitySrc: string, highQualitySrc: string) {
   return [src, blur] as const;
 }
 
-export {ImageCacheProvider, useProgressiveImage};
+export { ImageCacheProvider, useProgressiveImage };

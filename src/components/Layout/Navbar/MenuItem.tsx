@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, ReactNode} from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import Link from 'next/link';
 // import Link from '@app/components/Link';
 import AnimatedLink from '@app/components/AnimatedLink';
